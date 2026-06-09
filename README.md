@@ -37,3 +37,4 @@ npm run lint
 ## 部署说明
 
 项目已经包含 GitHub Actions 工作流，可以用于部署到 GitHub Pages。
+"Trigger Pages build $(date)" 
