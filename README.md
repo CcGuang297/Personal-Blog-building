@@ -1,39 +1,39 @@
-# Personal Blog
+# 个人博客
 
-A simple personal blog starter built with Next.js, TypeScript, Tailwind CSS, and Markdown.
+这是一个使用 Next.js、TypeScript、Tailwind CSS 和 Markdown 搭建的个人博客骨架项目。
 
-## Features
+## 当前功能
 
-- Static blog pages for GitHub Pages
-- Home page
-- Post list page
-- Post detail page
-- About page
-- Markdown posts stored in `content/posts`
+- 支持 GitHub Pages 静态部署
+- 首页
+- 文章列表页
+- 文章详情页
+- 关于我页面
+- 文章内容存放在 `content/posts`
 
-## Tech Stack
+## 技术栈
 
 - Next.js
 - TypeScript
 - Tailwind CSS
 - Markdown
 
-## Local Development
+## 本地开发
 
 ```bash
 npm install
 npm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000).
+打开 [http://localhost:3000](http://localhost:3000) 查看网站。
 
-## Build
+## 构建检查
 
 ```bash
 npm run build
 npm run lint
 ```
 
-## Deploy
+## 部署说明
 
-This project includes a GitHub Actions workflow for GitHub Pages deployment.
+项目已经包含 GitHub Actions 工作流，可以用于部署到 GitHub Pages。
