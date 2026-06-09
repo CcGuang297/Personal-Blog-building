@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     default: "CcGuang",
     template: "%s | CcGuang",
   },
-  description: "CcGuang 的个人博客。",
+  description: "CcGuang 的个人博客，记录开发、项目与学习过程。",
 };
 
 const navItems = [
@@ -75,7 +75,7 @@ export default function RootLayout({
             <div className="site-footer__block">
               <p className="site-footer__brand">CcGuang</p>
               <p className="site-footer__copy">
-                专注于技术沉淀与项目实践的个人博客。在这里，每一行代码和文字都承载着思考。
+                一个持续生长中的个人博客。这里整理代码、项目、记录和那些值得被留下来的学习痕迹。
               </p>
               <p className="site-footer__meta">© 2026 CcGuang. All rights reserved.</p>
             </div>

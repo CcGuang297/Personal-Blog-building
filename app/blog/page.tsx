@@ -23,7 +23,7 @@ export default function BlogPage() {
           <p className="micro-chip">Writing Archive</p>
           <h1 className="section-title section-title--page">Latest Writing</h1>
           <p className="section-description">
-            这里收录我关于 AI Agent、前端开发、项目实践和学习过程的记录。页面保持内容优先，只用最少的视觉语言辅助阅读。
+            这里收录我关于 AI Agent、前端开发、项目实践和学习过程的记录。页面尽量克制，让内容本身成为主角。
           </p>
         </div>
 
@@ -37,7 +37,7 @@ export default function BlogPage() {
               </div>
               <div className="writing-item__cta">
                 <span>Read Full Article</span>
-                <span aria-hidden="true">→</span>
+                <span aria-hidden="true">-&gt;</span>
               </div>
             </Link>
           ))}

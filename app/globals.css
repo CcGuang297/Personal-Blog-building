@@ -375,16 +375,22 @@ a {
 }
 
 .writing-item {
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   gap: 2.5rem;
   border-bottom: 1px solid var(--line);
   padding: 4rem 0;
+  transition:
+    background-color 240ms ease,
+    padding 240ms ease,
+    border-color 240ms ease;
 }
 
 .writing-item:hover {
   background: var(--surface);
+  border-bottom-color: var(--accent);
   padding-left: 2rem;
   padding-right: 2rem;
 }
@@ -402,6 +408,9 @@ a {
   font-size: 0.688rem;
   text-transform: uppercase;
   letter-spacing: 0.18em;
+  transition:
+    color 200ms ease,
+    transform 300ms ease;
 }
 
 .writing-item__title {
@@ -409,10 +418,19 @@ a {
   font-size: clamp(2rem, 4.2vw, 3.25rem);
   font-weight: 700;
   line-height: 1.08;
+  transition:
+    color 220ms ease,
+    transform 320ms ease;
 }
 
 .writing-item:hover .writing-item__title {
   color: var(--accent);
+  transform: translateX(0.5rem);
+}
+
+.writing-item:hover .writing-item__date {
+  color: var(--accent);
+  transform: translateX(0.35rem);
 }
 
 .writing-item__cta {
@@ -424,6 +442,17 @@ a {
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.18em;
+  transition:
+    opacity 300ms ease,
+    transform 300ms ease;
+}
+
+.writing-item__cta span:last-child {
+  transition: transform 300ms ease;
+}
+
+.writing-item:hover .writing-item__cta span:last-child {
+  transform: translateX(0.35rem);
 }
 
 .post-hero {
@@ -718,11 +747,13 @@ a {
 
 .search-pill {
   border: 1px solid var(--line);
+  background: transparent;
   padding: 0.35rem 0.75rem;
   color: var(--muted);
   font-size: 0.688rem;
   letter-spacing: 0.12em;
   text-transform: uppercase;
+  cursor: pointer;
 }
 
 .search-pill--primary {
