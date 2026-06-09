@@ -51,6 +51,32 @@ export default function Home() {
         </div>
       </section>
 
+      <section className="section-block">
+        <div className="shell">
+          <div className="section-heading">
+            <h2 className="section-title">Latest Writing</h2>
+            <Link href="/blog" className="section-link">
+              All Posts
+            </Link>
+          </div>
+
+          <div className="writing-list">
+            {latestPosts.map((post) => (
+              <Link key={post.slug} href={`/blog/${post.slug}`} className="writing-item">
+                <div className="writing-item__copy">
+                  <p className="writing-item__date">{dateFormatter.format(new Date(post.date))}</p>
+                  <h3 className="writing-item__title">{post.title}</h3>
+                </div>
+                <div className="writing-item__cta">
+                  <span>Read Full Article</span>
+                  <span aria-hidden="true">-&gt;</span>
+                </div>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <section id="projects" className="section-block">
         <div className="shell">
           <div className="section-heading">
@@ -77,32 +103,6 @@ export default function Home() {
                   <p className="project-card__description">{project.description}</p>
                 </div>
               </article>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="section-block">
-        <div className="shell">
-          <div className="section-heading">
-            <h2 className="section-title">Latest Writing</h2>
-            <Link href="/blog" className="section-link">
-              All Posts
-            </Link>
-          </div>
-
-          <div className="writing-list">
-            {latestPosts.map((post) => (
-              <Link key={post.slug} href={`/blog/${post.slug}`} className="writing-item">
-                <div className="writing-item__copy">
-                  <p className="writing-item__date">{dateFormatter.format(new Date(post.date))}</p>
-                  <h3 className="writing-item__title">{post.title}</h3>
-                </div>
-                <div className="writing-item__cta">
-                  <span>Read Full Article</span>
-                  <span aria-hidden="true">-&gt;</span>
-                </div>
-              </Link>
             ))}
           </div>
         </div>
