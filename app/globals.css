@@ -189,7 +189,8 @@ a {
 
 .hero-title {
   margin: 0;
-  font-size: clamp(4.5rem, 10vw, 7.5rem);
+  font-size: 4.5rem;
+  font-weight: 700;
   line-height: 0.85;
   text-transform: uppercase;
 }
@@ -1868,6 +1869,10 @@ a {
     padding-right: 2.5rem;
   }
 
+  .hero-title {
+    font-size: 6rem;
+  }
+
   .topbar__navwrap {
     display: flex;
   }
@@ -1907,6 +1912,10 @@ a {
 }
 
 @media (min-width: 1024px) {
+  .hero-title {
+    font-size: 7.5rem;
+  }
+
   .writing-item {
     flex-direction: row;
     align-items: center;
@@ -1990,10 +1999,6 @@ a {
   .site-footer {
     padding-top: 5rem;
     padding-bottom: 5rem;
-  }
-
-  .hero-title {
-    font-size: 4rem;
   }
 
   .search-panel__top,
