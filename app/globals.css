@@ -209,12 +209,15 @@ a {
 .hero-description {
   max-width: 42rem;
   margin: 0;
+  font-size: 1.05rem;
+  line-height: 1.9;
 }
 
 .hero-actions {
   display: flex;
   flex-wrap: wrap;
   gap: 1.5rem;
+  margin-top: 0.75rem;
 }
 
 .primary-button,

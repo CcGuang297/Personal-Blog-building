@@ -45,7 +45,7 @@ export default function Home() {
               查看文章
             </Link>
             <Link href="/about" className="secondary-button">
-              关于我<span aria-hidden="true">-&gt;</span>
+              关于我 <span aria-hidden="true">-&gt;</span>
             </Link>
           </div>
         </div>
