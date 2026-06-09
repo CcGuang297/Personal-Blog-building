@@ -8,10 +8,15 @@ type PostFrontmatter = {
   title: string;
   date: string;
   summary: string;
+  tags?: string[];
 };
 
-export type PostSummary = PostFrontmatter & {
+export type PostSummary = {
   slug: string;
+  title: string;
+  date: string;
+  summary: string;
+  tags: string[];
 };
 
 export type PostDetail = PostSummary & {
@@ -43,6 +48,10 @@ function parseFrontmatter(slug: string, fileContents: string) {
       title: frontmatter.title,
       date: frontmatter.date,
       summary: frontmatter.summary,
+      tags:
+        frontmatter.tags && frontmatter.tags.length > 0
+          ? frontmatter.tags
+          : ["Journal"],
     },
     content,
   };

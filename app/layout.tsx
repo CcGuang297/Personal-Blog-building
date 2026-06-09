@@ -1,25 +1,36 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { Noto_Sans_SC, Source_Code_Pro } from "next/font/google";
+import { JetBrains_Mono, Space_Grotesk } from "next/font/google";
 import "./globals.css";
 
-const notoSans = Noto_Sans_SC({
-  variable: "--font-body",
+const displayFont = Space_Grotesk({
+  variable: "--font-display",
   subsets: ["latin"],
+  weight: ["500", "600", "700"],
 });
 
-const sourceCodePro = Source_Code_Pro({
-  variable: "--font-code",
+const monoFont = JetBrains_Mono({
+  variable: "--font-mono",
   subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
 });
 
 export const metadata: Metadata = {
   title: {
-    default: "My Blog",
-    template: "%s | My Blog",
+    default: "CcGuang",
+    template: "%s | CcGuang",
   },
-  description: "A simple personal blog built with Next.js and Markdown.",
+  description: "CcGuang 的个人博客。",
 };
+
+const navItems = [
+  { href: "/", label: "Home" },
+  { href: "/blog", label: "Writing" },
+  { href: "/projects", label: "Projects" },
+  { href: "/about", label: "About" },
+];
+
+const repoUrl = "https://github.com/CcGuang297/Personal-Blog-building-";
 
 export default function RootLayout({
   children,
@@ -27,33 +38,81 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html
-      lang="zh-CN"
-      className={`${notoSans.variable} ${sourceCodePro.variable} h-full antialiased`}
-    >
-      <body className="min-h-full bg-stone-100 text-stone-900">
-        <div className="mx-auto flex min-h-screen w-full max-w-5xl flex-col px-6 py-8 sm:px-10">
-          <header className="mb-10 flex flex-col gap-4 border-b border-stone-200 pb-6 sm:flex-row sm:items-center sm:justify-between">
-            <Link href="/" className="text-xl font-semibold tracking-tight">
-              My Blog
+    <html lang="zh-CN" className={`${displayFont.variable} ${monoFont.variable}`}>
+      <body>
+        <header className="topbar">
+          <div className="shell topbar__inner">
+            <Link href="/" className="brand">
+              CcGuang
             </Link>
-            <nav className="flex flex-wrap gap-5 text-sm text-stone-600">
-              <Link href="/" className="transition hover:text-stone-900">
-                首页
+
+            <div className="topbar__navwrap">
+              <nav className="topbar__nav" aria-label="Primary">
+                {navItems.map((item) => (
+                  <Link key={item.href} href={item.href} className="nav-item">
+                    {item.label}
+                  </Link>
+                ))}
+                <a href={repoUrl} target="_blank" rel="noreferrer" className="nav-item">
+                  GitHub
+                </a>
+              </nav>
+
+              <div className="topbar__divider" />
+
+              <Link href="/search" className="nav-item nav-item--search">
+                <span>Q.</span>
+                <span>Search</span>
               </Link>
-              <Link href="/posts" className="transition hover:text-stone-900">
-                文章列表
+            </div>
+          </div>
+        </header>
+
+        <main className="page-frame">{children}</main>
+
+        <footer className="site-footer">
+          <div className="shell site-footer__grid">
+            <div className="site-footer__block">
+              <p className="site-footer__brand">CcGuang</p>
+              <p className="site-footer__copy">
+                专注于技术沉淀与项目实践的个人博客。在这里，每一行代码和文字都承载着思考。
+              </p>
+              <p className="site-footer__meta">© 2026 CcGuang. All rights reserved.</p>
+            </div>
+
+            <div className="site-footer__block">
+              <p className="footer-label">Navigation</p>
+              <div className="site-footer__links">
+                {navItems.map((item) => (
+                  <Link key={item.href} href={item.href} className="nav-item">
+                    {item.label}
+                  </Link>
+                ))}
+              </div>
+            </div>
+
+            <div className="site-footer__block">
+              <p className="footer-label">Connect</p>
+              <div className="site-footer__links">
+                <a href={repoUrl} target="_blank" rel="noreferrer" className="nav-item">
+                  GitHub
+                </a>
+                <a href="mailto:hello@ccguang.dev" className="nav-item">
+                  Email
+                </a>
+                <a href="https://github.com/CcGuang297" target="_blank" rel="noreferrer" className="nav-item">
+                  Profile
+                </a>
+              </div>
+            </div>
+
+            <div className="site-footer__action">
+              <Link href="/subscribe" className="subscribe-button">
+                Subscribe
               </Link>
-              <Link href="/about" className="transition hover:text-stone-900">
-                关于我
-              </Link>
-            </nav>
-          </header>
-          <main className="flex-1">{children}</main>
-          <footer className="mt-12 border-t border-stone-200 pt-6 text-sm text-stone-500">
-            Built with Next.js, Tailwind CSS and Markdown.
-          </footer>
-        </div>
+            </div>
+          </div>
+        </footer>
       </body>
     </html>
   );

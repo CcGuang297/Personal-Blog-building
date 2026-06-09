@@ -1,6 +1,6 @@
 # 个人博客
 
-这是一个使用 Next.js、TypeScript、Tailwind CSS 和 Markdown 搭建的个人博客骨架项目。
+这是一个基于 Next.js、TypeScript、Tailwind CSS 和 Markdown 搭建的个人博客项目。
 
 ## 当前功能
 
@@ -8,7 +8,11 @@
 - 首页
 - 文章列表页
 - 文章详情页
-- 关于我页面
+- 项目列表页
+- 项目详情页
+- 搜索页与搜索无结果页
+- 关于页
+- 404 页面
 - 文章内容存放在 `content/posts`
 
 ## 技术栈
@@ -30,12 +34,10 @@ npm run dev
 ## 构建检查
 
 ```bash
-npm run build
 npm run lint
+npm run build
 ```
 
 ## 部署说明
 
-项目已经包含 GitHub Actions 工作流，可以用于部署到 GitHub Pages。
-"Trigger Pages build $(date)" 
-"# Trigger build $(date)" 
+项目已经包含 GitHub Pages 静态导出所需配置，可以继续通过 GitHub Actions 部署。

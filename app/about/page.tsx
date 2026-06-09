@@ -1,32 +1,49 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "关于我",
-  description: "About the blog author.",
+  title: "About",
+  description: "关于 CcGuang。",
 };
+
+const sections = [
+  {
+    title: "个人介绍",
+    content:
+      "我是 CcGuang。这个博客不是展示模板，而是一张长期公开的工作台。这里会留下我在前端开发、AI Agent 和项目推进中的想法、实验与复盘。",
+  },
+  {
+    title: "学习方向",
+    content:
+      "我正在持续学习更稳定的工程习惯、信息结构设计、页面视觉判断，以及如何把想法真正做成可运行、可维护、可继续迭代的产品。",
+  },
+  {
+    title: "项目状态",
+    content:
+      "当前博客仍然处在逐步打磨阶段。我希望它先保持轻量和清楚，再慢慢补上项目展示、文章体系和更完整的发布流程。",
+  },
+];
 
 export default function AboutPage() {
   return (
-    <section className="space-y-6 rounded-[2rem] border border-stone-200 bg-white px-6 py-8 shadow-sm shadow-stone-200/40 sm:px-10">
-      <div className="space-y-3">
-        <p className="text-sm font-semibold uppercase tracking-[0.3em] text-stone-500">
-          About
-        </p>
-        <h1 className="text-3xl font-semibold tracking-tight text-stone-900 sm:text-4xl">
-          关于我
-        </h1>
-      </div>
+    <section className="section-block section-block--first">
+      <div className="shell">
+        <div className="section-heading section-heading--stack">
+          <p className="micro-chip">About</p>
+          <h1 className="section-title section-title--page">Working Notes</h1>
+          <p className="section-description">
+            这一页不放头像，也不做额外装饰，只保留最核心的个人介绍、学习方向和项目状态。
+          </p>
+        </div>
 
-      <div className="space-y-4 text-stone-600">
-        <p>
-          这里先放一个简单的个人介绍页。后面你可以把它改成你的真实经历、技能栈、联系方式，或者放一张头像。
-        </p>
-        <p>
-          这个博客目前刻意保持简单，只保留最基础的页面结构和内容系统，方便你后续逐步增加功能，而不是一开始就面对一大堆复杂配置。
-        </p>
-        <p>
-          如果你愿意，下一阶段我们可以继续加上文章封面、标签分类、分页、RSS 或自动部署工作流。
-        </p>
+        <div className="about-grid">
+          {sections.map((section, index) => (
+            <article key={section.title} className="about-card">
+              <p className="project-card__meta">{String(index + 1).padStart(2, "0")}</p>
+              <h2 className="about-card__title">{section.title}</h2>
+              <p className="about-card__body">{section.content}</p>
+            </article>
+          ))}
+        </div>
       </div>
     </section>
   );
