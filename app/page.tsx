@@ -29,11 +29,11 @@ export default function Home() {
           </div>
 
           <h1 className="hero-title">
-            Building,
+            COLLECTING,
             <br />
-            learning,
+            CREATING,
             <br />
-            writing.
+            GROWING.
           </h1>
 
           <p className="hero-description">
