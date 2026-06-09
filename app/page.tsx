@@ -37,7 +37,7 @@ export default function Home() {
           </h1>
 
           <p className="hero-description">
-            我在这里记录 AI Agent、前端开发、项目实践和学习过程，也把思考与复盘认真留下来。
+            我在这里记录 AI Agent、后端开发、项目实践和学习过程。探索技术的边界，沉淀思考的价值。
           </p>
 
           <div className="hero-actions">
@@ -45,7 +45,7 @@ export default function Home() {
               查看文章
             </Link>
             <Link href="/about" className="secondary-button">
-              关于我 <span aria-hidden="true">-&gt;</span>
+              关于我<span aria-hidden="true">-&gt;</span>
             </Link>
           </div>
         </div>
