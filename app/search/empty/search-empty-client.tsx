@@ -26,9 +26,9 @@ export default function SearchEmptyClient() {
 
         <div className="search-empty-card__body">
           <div className="search-empty-card__icon">!</div>
-          <h1 className="search-empty-card__title">当前查询没有找到对应内容</h1>
+          <h1 className="search-empty-card__title">当前搜索没有找到结果</h1>
           <p className="search-empty-card__text">
-            这次请求没有返回结果。你可以换一个关键词重新搜索，或者先回到首页浏览最近的文章与项目。
+            这次查询没有返回匹配内容。你可以换一个关键词重新搜索，或者先回到首页继续浏览文章和项目。
           </p>
 
           <div className="search-empty-card__terminal">

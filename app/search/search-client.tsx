@@ -46,7 +46,7 @@ export default function SearchClient() {
   return (
     <section className="section-block section-block--first search-surface">
       <div className="shell">
-        <form className="search-panel" action="/search/empty">
+        <form className="search-panel" action="empty">
           <div className="search-panel__top">
             <span className="project-card__meta">System::Input_Interface</span>
             <div className="search-panel__stats">
